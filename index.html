@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>জামালপুর জেলা</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- বাংলা ফন্ট -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap" rel="stylesheet">
+
+</head>
+
+<!-- 🔥 Home page only no-scroll -->
+<body class="home-page">
+
+<div class="main-container">
+
+    <!-- 🔷 Navbar -->
+    <nav class="navbar">
+        <h2>জামালপুর জেলা</h2>
+        <ul>
+            <li><a href="index.html">হোম</a></li>
+            <li><a href="history.html">জেলার পরিচিতি</a></li>
+            <li><a href="upazila.html">উপজেলা</a></li>
+            <li><a href="tourist.html">দর্শনীয় স্থান</a></li>
+            <li><a href="gallery.html">গ্যালারি</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+  <!-- 🔷 Hero -->
+<section class="hero">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h1 id="hero-title"></h1>
+
+        <p id="hero-sub">
+            প্রকৃতি, সংস্কৃতি ও ঐতিহ্যের এক অপূর্ব মিলনস্থল
+        </p>
+    <div class="info-card-hero">
+    <p>📍 ময়মনসিংহ বিভাগ</p>
+    <p>👥 জনসংখ্যা: ২৫ লাখ+</p>
+    <p>🏞️ উপজেলা: ৭টি</p>
+    <p>🌾 কৃষিভিত্তিক জেলা</p>
+</div>
+
+    </div>
+   
+</section>
+    <!-- 🔷 Footer -->
+    <footer>
+        <p>© 2026 | Developed by Md. Khalid Hasan | ICE Student, BUP</p>
+    </footer>
+
+</div>
+<script>
+const titles = [
+    "জামালপুর জেলায় আপনাকে স্বাগতম"
+];
+
+let i = 0;
+let j = 0;
+let currentText = "";
+let isDeleting = false;
+
+function typeEffect() {
+    const title = document.getElementById("hero-title");
+
+    if (!title) return;
+
+    currentText = titles[i];
+
+    if (!isDeleting) {
+        title.innerHTML = currentText.substring(0, j++);
+    } else {
+        title.innerHTML = currentText.substring(0, j--);
+    }
+
+    let speed = isDeleting ? 40 : 80;
+
+    if (!isDeleting && j === currentText.length + 1) {
+        speed = 1500;
+        isDeleting = true;
+    } 
+    else if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % titles.length;
+    }
+
+    setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+</script>
+</body>
+</html>
