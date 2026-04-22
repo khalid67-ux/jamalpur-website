@@ -18,6 +18,7 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 /* =========================
@@ -26,6 +27,7 @@ body {
 .navbar {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* 🔥 FIX (right side menu) */
     padding: 12px 20px;
     background: linear-gradient(45deg, purple, blue);
     color: white;
@@ -41,11 +43,19 @@ body {
 .navbar ul {
     display: flex;
     list-style: none;
-    margin-left: 20px;
+    margin-left: auto; /* 🔥 FIX */
+    gap: 15px; /* cleaner spacing */
+
+    overflow-x: auto; /* 🔥 scroll for mobile */
+    white-space: nowrap;
+}
+
+.navbar ul::-webkit-scrollbar {
+    display: none;
 }
 
 .navbar ul li {
-    margin-left: 15px;
+    flex: 0 0 auto;
 }
 
 .navbar ul li a {
@@ -64,6 +74,7 @@ body {
 ========================= */
 .hero {
     flex: 1;
+    min-height: calc(100vh - 120px); /* 🔥 FIX (footer visible) */
     background: url('jamalpur.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
@@ -92,7 +103,7 @@ body {
 
 /* title */
 #hero-title {
-    font-size: 45px;
+    font-size: 42px;
     font-weight: bold;
     margin-bottom: 10px;
 
@@ -143,6 +154,7 @@ footer {
     padding: 15px;
     background: #eee;
     font-size: 14px;
+    margin-top: auto; /* 🔥 FIX (always bottom) */
 }
 
 /* =========================
@@ -150,22 +162,13 @@ footer {
 ========================= */
 @media (max-width: 768px) {
 
-    /* navbar one line scroll */
     .navbar {
         flex-wrap: nowrap;
         overflow-x: auto;
     }
 
-    .navbar::-webkit-scrollbar {
-        display: none;
-    }
-
     .navbar ul {
         flex-direction: row;
-    }
-
-    .navbar ul li {
-        margin-left: 12px;
     }
 
     .navbar h2 {
@@ -209,6 +212,6 @@ footer {
     }
 
     .hero {
-        height: calc(100vh - 60px);
+        height: calc(100vh - 70px);
     }
 }
