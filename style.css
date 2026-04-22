@@ -1,345 +1,74 @@
 /* =========================
-   RESET
+   RESPONSIVE (MOBILE FIX)
 ========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-/* =========================
-   GLOBAL SCROLL
-========================= */
-html, body {
-    height: 100%;
-    overflow: auto;
-}
+@media (max-width: 768px) {
 
-/* =========================
-   HOME PAGE NO SCROLL
-========================= */
-.home-page {
-    height: 100vh;
-    overflow: hidden;
-}
+    /* navbar */
+    .navbar {
+        padding: 0 20px;
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-/* =========================
-   BODY
-========================= */
-body {
-    font-family: 'Noto Sans Bengali', sans-serif;
-}
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
 
-/* =========================
-   MAIN CONTAINER
-========================= */
-.main-container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+    .navbar li {
+        margin: 10px 0;
+    }
 
-/* =========================
-   NAVBAR
-========================= */
-.navbar {
-    height: 75px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 50px;
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
-    color: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
+    /* hero text */
+    #hero-title {
+        font-size: 26px;
+        text-align: center;
+    }
 
-.navbar h2 {
-    color: white;
-    font-weight: bold;
-}
+    #hero-sub {
+        font-size: 14px;
+        padding: 0 10px;
+    }
 
-.navbar ul {
-    display: flex;
-    list-style: none;
-    align-items: center;
-}
+    /* button */
+    .hero-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
 
-.navbar li {
-    margin-left: 25px;
-}
+    /* hero section height fix */
+    .hero {
+        padding: 20px;
+    }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    position: relative;
-    transition: 0.3s;
-}
+    /* info card */
+    .info-card-hero {
+        width: 90%;
+        font-size: 14px;
+        padding: 12px;
+        text-align: left;
+    }
 
-.navbar a:hover {
-    text-shadow: 0 0 8px rgba(255,255,255,0.8);
-}
+    /* grid fix */
+    .upazila-container,
+    .tourist-container,
+    .gallery-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
 
-.navbar a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background: white;
-    left: 0;
-    bottom: -4px;
-    transition: 0.3s;
-}
+    /* content */
+    .content {
+        padding: 20px;
+    }
 
-.navbar a:hover::after {
-    width: 100%;
-}
-
-/* =========================
-   HERO
-========================= */
-.hero {
-    flex: 1;
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-                url('images/jamalpur.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    color: white;
-    text-align: center;
-}
-
-/* hero text */
-#hero-title {
-    font-size: 40px;
-    font-weight: 700;
-    display: inline-block;
-    color: white;
-}
-
-#hero-sub {
-    margin-top: 10px;
-    font-size: 18px;
-    opacity: 0.9;
-}
-
-/* button */
-.hero-btn {
-    margin-top: 20px;
-    padding: 12px 28px;
-    background: linear-gradient(45deg, #ff7a00, #f107a3);
-    border: none;
-    color: white;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: 600;
-}
-
-.hero-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-    height: 60px;
-    background: #f8f8f8;
-    color: #555;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 1px solid #ddd;
-    font-size: 14px;
-}
-
-/* =========================
-   PAGE HEADER
-========================= */
-.page-header {
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-
-.page-header h1 {
-    font-size: 24px;
-}
-
-/* =========================
-   CONTENT
-========================= */
-.content {
-    max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
-    line-height: 1.8;
-}
-
-.content h1 {
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.content h2 {
-    margin-top: 25px;
-    color: #2575fc;
-}
-
-.content h3 {
-    margin-top: 15px;
-}
-
-.content ul {
-    margin: 15px 0;
-    padding-left: 20px;
-}
-
-/* =========================
-   PAGE TITLE
-========================= */
-.page-title {
-    text-align: center;
-    padding: 30px;
-}
-
-.page-title h1 {
-    font-size: 30px;
-}
-
-.sub-title {
-    text-align: center;
-    color: #666;
-    margin-top: -10px;
-}
-
-/* =========================
-   GRID
-========================= */
-.upazila-container,
-.tourist-container,
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 25px;
-    padding: 40px;
-}
-
-/* =========================
-   CARD
-========================= */
-.card {
-    text-decoration: none;
-    color: black;
-    display: block;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-}
-
-.card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-}
-
-.card h3 {
-    padding: 15px;
-    text-align: center;
-}
-
-.card p {
-    padding: 0 15px 15px;
-    font-size: 14px;
-    color: #555;
-}
-
-/* =========================
-   GALLERY
-========================= */
-.gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: 0.4s;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.1);
-}
-
-/* =========================
-   CONTACT
-========================= */
-.contact-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap: 30px;
-    padding: 40px;
-}
-
-.contact-info,
-.contact-form {
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.contact-form button {
-    width: 100%;
-    padding: 12px;
-    background: #2575fc;
-    border: none;
-    color: white;
-    border-radius: 5px;
-}
-#hero-title {
-    background: linear-gradient(90deg, #ff7a00, #f107a3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.info-card-hero {
-    margin-top: 15px;
-    padding: 15px 20px;
-
-    background: rgba(255, 255, 255, 0.000001); /* glass effect */
-    backdrop-filter: blur(10px);
-
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.2);
-
-    display: inline-block;
-    text-align: left;
-
-    color: white;
-    font-size: 15px;
-}
-
-/* spacing */
-.info-card-hero p {
-    margin: 5px 0;
+    /* footer */
+    footer {
+        font-size: 12px;
+        text-align: center;
+        padding: 10px;
+    }
 }
