@@ -1,91 +1,99 @@
-/* 🔹 RESET */
+/* =========================
+   RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Noto Sans Bengali', sans-serif;
 }
 
-/* 🔹 BODY */
+/* =========================
+   BODY + FOOTER FIX
+========================= */
+html, body {
+    height: 100%;
+}
+
 body {
-    font-family: 'Noto Sans Bengali', sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
-/* 🔹 NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
     padding: 12px 20px;
     background: linear-gradient(45deg, purple, blue);
     color: white;
 }
 
-/* 🔹 LOGO */
-.logo {
-    font-size: 20px;
-    font-weight: bold;
+/* title */
+.navbar h2 {
+    font-size: 18px;
     white-space: nowrap;
 }
 
-/* 🔹 NAV MENU (FIXED) */
-.nav-links {
-    list-style: none;        /* 🔥 bullet remove */
-    display: flex;           /* 🔥 main fix */
-    gap: 15px;
-
-    overflow-x: auto;
-    white-space: nowrap;
+/* menu */
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin-left: 20px;
 }
 
-/* scroll hide */
-.nav-links::-webkit-scrollbar {
-    display: none;
+.navbar ul li {
+    margin-left: 15px;
 }
 
-.nav-links li {
-    flex: 0 0 auto;
-}
-
-.nav-links li a {
-    text-decoration: none;
+.navbar ul li a {
     color: white;
+    text-decoration: none;
     font-size: 14px;
+    white-space: nowrap;
 }
 
-/* 🔹 HERO */
+.navbar ul li a:hover {
+    opacity: 0.8;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
 .hero {
     flex: 1;
-    height: calc(100vh - 60px);
-
     background: url('jamalpur.jpg') center/cover no-repeat;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
+    text-align: center;
+    color: white;
     position: relative;
 }
 
+/* overlay */
 .hero::before {
     content: "";
     position: absolute;
-    inset: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
 }
 
+/* content */
 .hero-content {
     position: relative;
-    text-align: center;
-    color: white;
+    z-index: 2;
 }
 
-/* 🔹 TEXT */
+/* title */
 #hero-title {
-    font-size: 38px;
+    font-size: 45px;
+    font-weight: bold;
     margin-bottom: 10px;
 
     background: linear-gradient(45deg, orange, pink);
@@ -93,58 +101,114 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+/* sub */
 #hero-sub {
-    font-size: 16px;
-    margin-bottom: 15px;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-/* 🔹 CARD */
-.info-card {
-    margin-top: 20px;
-    padding: 18px;
-
-    background: rgba(0,0,0,0.7);
-    border-radius: 12px;
+/* button */
+.hero-btn {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, orange, pink);
+    border: none;
+    border-radius: 25px;
     color: white;
-
-    width: 300px;
+    cursor: pointer;
 }
 
-/* 🔹 FOOTER */
+/* =========================
+   INFO CARD
+========================= */
+.info-card-hero {
+    margin-top: 20px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+    color: white;
+    text-align: left;
+    line-height: 1.8;
+}
+
+/* =========================
+   FOOTER
+========================= */
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     background: #eee;
+    font-size: 14px;
 }
 
-/* 🔹 DESKTOP */
-@media (min-width: 769px) {
-    body {
-        overflow: hidden;
-    }
-}
-
-/* 🔹 MOBILE */
+/* =========================
+   MOBILE VERSION
+========================= */
 @media (max-width: 768px) {
 
+    /* navbar one line scroll */
     .navbar {
-        flex-direction: row;  /* 🔥 IMPORTANT (column না) */
+        flex-wrap: nowrap;
+        overflow-x: auto;
     }
 
-    .nav-links {
-        flex-direction: row;  /* 🔥 FORCE ONE LINE */
+    .navbar::-webkit-scrollbar {
+        display: none;
     }
 
+    .navbar ul {
+        flex-direction: row;
+    }
+
+    .navbar ul li {
+        margin-left: 12px;
+    }
+
+    .navbar h2 {
+        margin-right: 10px;
+        font-size: 16px;
+    }
+
+    /* hero */
     .hero {
-        height: auto;
-        padding: 40px 15px;
+        padding: 60px 15px;
     }
 
     #hero-title {
-        font-size: 24px;
+        font-size: 26px;
     }
 
-    .info-card {
+    #hero-sub {
+        font-size: 14px;
+    }
+
+    /* card */
+    .info-card-hero {
         width: 90%;
+        font-size: 14px;
+    }
+
+    /* button */
+    .hero-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* =========================
+   DESKTOP NO SCROLL
+========================= */
+@media (min-width: 769px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .hero {
+        height: calc(100vh - 60px);
     }
 }
