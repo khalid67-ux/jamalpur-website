@@ -15,35 +15,45 @@ body {
 
 /* 🔹 NAVBAR */
 .navbar {
-    position: relative;
-    z-index: 1000;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 12px 25px;
+    padding: 12px 20px;
     background: linear-gradient(45deg, purple, blue);
     color: white;
 }
 
-/* logo */
+/* 🔹 LOGO */
 .logo {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
+    white-space: nowrap;
 }
 
-/* menu */
+/* 🔹 NAV MENU (FIXED) */
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+    list-style: none;        /* 🔥 bullet remove */
+    display: flex;           /* 🔥 main fix */
+    gap: 15px;
+
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* scroll hide */
+.nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-links li {
+    flex: 0 0 auto;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /* 🔹 HERO */
@@ -60,24 +70,22 @@ body {
     position: relative;
 }
 
-/* overlay */
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.55);
+    background: rgba(0,0,0,0.5);
 }
 
-/* content */
 .hero-content {
     position: relative;
     text-align: center;
     color: white;
 }
 
-/* title */
+/* 🔹 TEXT */
 #hero-title {
-    font-size: 42px;
+    font-size: 38px;
     margin-bottom: 10px;
 
     background: linear-gradient(45deg, orange, pink);
@@ -85,25 +93,21 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-/* sub */
 #hero-sub {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 16px;
+    margin-bottom: 15px;
 }
 
 /* 🔹 CARD */
 .info-card {
     margin-top: 20px;
-    padding: 20px;
+    padding: 18px;
 
     background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(8px);
-
-    border-radius: 15px;
+    border-radius: 12px;
     color: white;
-    text-align: left;
 
-    width: 320px;
+    width: 300px;
 }
 
 /* 🔹 FOOTER */
@@ -113,46 +117,34 @@ footer {
     background: #eee;
 }
 
-/* 🔹 DESKTOP FIX */
+/* 🔹 DESKTOP */
 @media (min-width: 769px) {
     body {
         overflow: hidden;
     }
 }
 
-/* 🔹 MOBILE VERSION */
+/* 🔹 MOBILE */
 @media (max-width: 768px) {
 
-    /* navbar column */
     .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;  /* 🔥 IMPORTANT (column না) */
     }
 
     .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
+        flex-direction: row;  /* 🔥 FORCE ONE LINE */
     }
 
-    /* hero */
     .hero {
         height: auto;
-        padding: 40px 20px;
+        padding: 40px 15px;
     }
 
-    /* text size */
     #hero-title {
-        font-size: 26px;
+        font-size: 24px;
     }
 
-    #hero-sub {
-        font-size: 14px;
-    }
-
-    /* card */
     .info-card {
         width: 90%;
-        margin: auto;
     }
 }
