@@ -25,30 +25,34 @@ body {
 ========================= */
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 12px 20px;
     background: linear-gradient(45deg, purple, blue);
     color: white;
 }
 
+/* title */
 .navbar h2 {
-    font-size: 22px;
+    font-size: 18px;
+    white-space: nowrap;
 }
 
+/* menu */
 .navbar ul {
     display: flex;
     list-style: none;
+    margin-left: 20px;
 }
 
 .navbar ul li {
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 .navbar ul li a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
+    white-space: nowrap;
 }
 
 .navbar ul li a:hover {
@@ -146,15 +150,27 @@ footer {
 ========================= */
 @media (max-width: 768px) {
 
-    /* navbar clean */
+    /* navbar one line scroll */
     .navbar {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 15px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .navbar::-webkit-scrollbar {
+        display: none;
     }
 
     .navbar ul {
-        display: none; /* hide menu */
+        flex-direction: row;
+    }
+
+    .navbar ul li {
+        margin-left: 12px;
+    }
+
+    .navbar h2 {
+        margin-right: 10px;
+        font-size: 16px;
     }
 
     /* hero */
@@ -193,6 +209,6 @@ footer {
     }
 
     .hero {
-        height: calc(100vh - 70px);
+        height: calc(100vh - 60px);
     }
 }
