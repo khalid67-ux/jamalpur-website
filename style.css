@@ -9,10 +9,15 @@
 }
 
 /* =========================
-   BODY
+   BODY + FOOTER FIX
 ========================= */
+html, body {
+    height: 100%;
+}
+
 body {
-    background: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 /* =========================
@@ -54,7 +59,7 @@ body {
    HERO SECTION
 ========================= */
 .hero {
-    height: 100vh;
+    flex: 1;
     background: url('jamalpur.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
@@ -75,7 +80,7 @@ body {
     left: 0;
 }
 
-/* hero content */
+/* content */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -119,8 +124,8 @@ body {
     margin-left: auto;
     margin-right: auto;
 
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
     color: white;
     text-align: left;
     line-height: 1.8;
@@ -137,29 +142,23 @@ footer {
 }
 
 /* =========================
-   RESPONSIVE (MOBILE)
+   MOBILE VERSION
 ========================= */
 @media (max-width: 768px) {
 
-    /* navbar */
+    /* navbar clean */
     .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
         padding: 15px;
     }
 
     .navbar ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .navbar ul li {
-        margin: 10px 0;
+        display: none; /* hide menu */
     }
 
     /* hero */
     .hero {
-        height: auto;
         padding: 60px 15px;
     }
 
@@ -181,5 +180,19 @@ footer {
     .hero-btn {
         font-size: 14px;
         padding: 10px 20px;
+    }
+}
+
+/* =========================
+   DESKTOP NO SCROLL
+========================= */
+@media (min-width: 769px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .hero {
+        height: calc(100vh - 70px);
     }
 }
