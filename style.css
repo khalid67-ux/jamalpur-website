@@ -12,16 +12,12 @@
    BODY + FOOTER FIX
 ========================= */
 html, body{
-    margin:0;
-    padding:0;
     height:100%;
 }
 
 body{
-    margin:0;
     display:flex;
     flex-direction:column;
-    min-height:100vh;
 }
 
 .main-container{
@@ -77,21 +73,14 @@ body{
 ========================= */
 /* HERO WITH BACKGROUND IMAGE */
 .hero{
-    position: relative;
-  flex: 1;
+    position:relative;
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    /* 🔥 improved background control */
-    background-image: url("images/jamalpur.jpg");
-    background-size: cover;          /* full screen cover */
-    background-position: center top; /* 🔥 subject safe */
-    background-repeat: no-repeat;
-
-    overflow: hidden; /* extra gap fix */
+    background: url("jamalpur.jpg") center/cover no-repeat;
 }
 
 .overlay{
@@ -112,14 +101,14 @@ body{
     font-size:34px;
     margin-bottom:10px;
 
-    color:#03e0f8;
-    
+    color:#ff8c00;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.6);
 }
 
 .hero p{
     color:#ffffff;
-    font-size:20px;
-    margin-bottom:18px;
+    font-size:18px;
+    margin-bottom:20px;
     text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
@@ -176,6 +165,7 @@ footer p{
         padding:3px;
     }
 }
+
 /* =========================
    history page
 ========================= */
