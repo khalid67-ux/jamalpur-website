@@ -105,6 +105,9 @@ body{
 .hero h1{
     font-size:32px;
     margin-bottom:10px;
+
+    color:#ffffff; /* white text */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* shadow */
 }
 
 .hero p{
