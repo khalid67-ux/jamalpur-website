@@ -106,11 +106,11 @@ body{
     font-size:32px;
     margin-bottom:10px;
 
-    background: linear-gradient(90deg, #ffd89b, #ff8c00, #ff5e00);
+    background: linear-gradient(90deg, #ffb347, #ff8c00, #ff6a00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    text-shadow: 0 3px 8px rgba(0,0,0,0.5);
 }
 
 .hero p{
