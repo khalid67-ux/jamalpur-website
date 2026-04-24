@@ -1,13 +1,17 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Noto Sans Bengali', sans-serif;
+    font-family:'Noto Sans Bengali', sans-serif;
 }
 
-/* BODY FLEX (footer নিচে রাখার জন্য) */
-html,body{
+/* =========================
+   BODY + FOOTER FIX
+========================= */
+html, body{
     height:100%;
 }
 
@@ -16,13 +20,15 @@ body{
     flex-direction:column;
 }
 
-/* 🔷 NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 .navbar{
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:12px 30px;
-    background: linear-gradient(90deg, #6a00ff, #0044ff);
+    background:linear-gradient(90deg, #6a00ff, #0044ff);
     color:white;
     position:sticky;
     top:0;
@@ -34,11 +40,17 @@ body{
     font-weight:bold;
 }
 
-/* MENU */
+/* =========================
+   NAV LINKS
+========================= */
 .nav-links{
     display:flex;
     list-style:none;
-    gap:25px;
+    gap:20px;
+}
+
+.nav-links li{
+    list-style:none;
 }
 
 .nav-links a{
@@ -46,22 +58,18 @@ body{
     text-decoration:none;
     font-size:16px;
     transition:0.3s;
+    padding:5px;
 }
 
 .nav-links a:hover{
     color:#ffd700;
 }
 
-/* MOBILE MENU BUTTON */
-.menu-btn{
-    display:none;
-    font-size:22px;
-    cursor:pointer;
-}
-
-/* 🔷 HERO */
+/* =========================
+   HERO SECTION
+========================= */
 .hero{
-    flex:1;
+    flex:1; /* 🔥 footer নিচে রাখার জন্য */
     text-align:center;
     padding:60px 20px;
 }
@@ -91,41 +99,42 @@ body{
     border-radius:8px;
 }
 
-/* 🔷 FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer{
     background:#222;
     color:white;
     text-align:center;
     padding:12px;
     font-size:14px;
+    margin-top:auto; /* 🔥 সবসময় নিচে */
 }
 
-/* 🔻 RESPONSIVE */
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 @media(max-width:768px){
 
+    /* 🔥 NAVBAR ONE LINE */
     .nav-links{
-        position:absolute;
-        top:60px;
-        right:0;
-        background:#0044ff;
-        flex-direction:column;
-        width:100%;
-        display:none;
-        text-align:center;
+        flex-direction:row;
+        justify-content:flex-end;
+        gap:12px;
+        overflow-x:auto;
+        white-space:nowrap;
+        padding:5px 10px;
     }
 
     .nav-links li{
-        padding:12px;
+        flex:0 0 auto;
     }
 
-    .nav-links.active{
-        display:flex;
+    .nav-links a{
+        font-size:14px;
     }
 
-    .menu-btn{
-        display:block;
-    }
-
+    /* HERO */
     .hero h1{
         font-size:24px;
     }
