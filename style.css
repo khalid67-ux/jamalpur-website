@@ -124,15 +124,20 @@ body{
 /* =========================
    FOOTER
 ========================= */
+/* ===== FOOTER WHITE + SMALL TEXT ===== */
 footer{
-    background:#222;
-    color:white;
+    background:#ffffff !important;   /* সব জায়গায় white */
+    color:#444;                     /* soft dark text */
     text-align:center;
-    padding:12px;
-    font-size:14px;
+    padding:6px 8px;               /* একটু কম padding */
+    font-size:11px;                /* ছোট লেখা */
     margin-top:auto;
+    border-top:1px solid #ddd;
 }
 
+footer p{
+    margin:0;
+}
 /* =========================
    MOBILE RESPONSIVE
 ========================= */
