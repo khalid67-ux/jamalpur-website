@@ -71,14 +71,20 @@ body{
 /* =========================
    HERO SECTION
 ========================= */
+/* HERO WITH BACKGROUND IMAGE */
 .hero{
     flex:1;
     position:relative;
-    text-align:center;
-    padding:60px 20px;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    /* 🔥 IMAGE ADD */
+    background: url("jamalpur.jpg") no-repeat center center/cover;
+
+    height:90vh; /* full screen look */
+    padding:60px 20px;
 }
 
 /* optional overlay */
