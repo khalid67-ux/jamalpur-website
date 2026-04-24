@@ -20,6 +20,12 @@ body{
     flex-direction:column;
 }
 
+.main-container{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
 /* =========================
    NAVBAR
 ========================= */
@@ -35,25 +41,22 @@ body{
     z-index:1000;
 }
 
-.logo{
+.navbar h2{
     font-size:20px;
-    font-weight:bold;
 }
 
-/* =========================
-   NAV LINKS
-========================= */
-.nav-links{
+/* 🔥 NAV MENU */
+.navbar ul{
     display:flex;
     list-style:none;
     gap:20px;
 }
 
-.nav-links li{
+.navbar ul li{
     list-style:none;
 }
 
-.nav-links a{
+.navbar ul li a{
     color:white;
     text-decoration:none;
     font-size:16px;
@@ -61,7 +64,7 @@ body{
     padding:5px;
 }
 
-.nav-links a:hover{
+.navbar ul li a:hover{
     color:#ffd700;
 }
 
@@ -69,9 +72,28 @@ body{
    HERO SECTION
 ========================= */
 .hero{
-    flex:1; /* 🔥 footer নিচে রাখার জন্য */
+    flex:1;
+    position:relative;
     text-align:center;
     padding:60px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* optional overlay */
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.1);
+}
+
+.hero-content{
+    position:relative;
+    z-index:1;
 }
 
 .hero h1{
@@ -84,16 +106,16 @@ body{
     margin-bottom:20px;
 }
 
-/* INFO BOX */
-.info{
+/* INFO CARD */
+.info-card-hero{
     display:flex;
     justify-content:center;
-    gap:20px;
+    gap:15px;
     flex-wrap:wrap;
     margin-top:20px;
 }
 
-.info p{
+.info-card-hero p{
     background:#f1f1f1;
     padding:10px 15px;
     border-radius:8px;
@@ -108,7 +130,7 @@ footer{
     text-align:center;
     padding:12px;
     font-size:14px;
-    margin-top:auto; /* 🔥 সবসময় নিচে */
+    margin-top:auto;
 }
 
 /* =========================
@@ -117,24 +139,23 @@ footer{
 @media(max-width:768px){
 
     /* 🔥 NAVBAR ONE LINE */
-    .nav-links{
+    .navbar ul{
         flex-direction:row;
         justify-content:flex-end;
         gap:12px;
         overflow-x:auto;
         white-space:nowrap;
-        padding:5px 10px;
     }
 
-    .nav-links li{
+    .navbar ul li{
         flex:0 0 auto;
     }
 
-    .nav-links a{
+    .navbar ul li a{
         font-size:14px;
     }
 
-    /* HERO */
+    /* HERO TEXT */
     .hero h1{
         font-size:24px;
     }
