@@ -1,1 +1,136 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Noto Sans Bengali', sans-serif;
+}
 
+/* BODY FLEX (footer নিচে রাখার জন্য) */
+html,body{
+    height:100%;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+}
+
+/* 🔷 NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 30px;
+    background: linear-gradient(90deg, #6a00ff, #0044ff);
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* MENU */
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#ffd700;
+}
+
+/* MOBILE MENU BUTTON */
+.menu-btn{
+    display:none;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* 🔷 HERO */
+.hero{
+    flex:1;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+/* INFO BOX */
+.info{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.info p{
+    background:#f1f1f1;
+    padding:10px 15px;
+    border-radius:8px;
+}
+
+/* 🔷 FOOTER */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:12px;
+    font-size:14px;
+}
+
+/* 🔻 RESPONSIVE */
+@media(max-width:768px){
+
+    .nav-links{
+        position:absolute;
+        top:60px;
+        right:0;
+        background:#0044ff;
+        flex-direction:column;
+        width:100%;
+        display:none;
+        text-align:center;
+    }
+
+    .nav-links li{
+        padding:12px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:24px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+}
