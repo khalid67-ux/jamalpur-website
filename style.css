@@ -12,16 +12,12 @@
    BODY + FOOTER FIX
 ========================= */
 html, body{
-    margin:0;
-    padding:0;
     height:100%;
 }
 
 body{
-    margin:0;
     display:flex;
     flex-direction:column;
-    min-height:100vh;
 }
 
 .main-container{
@@ -77,21 +73,14 @@ body{
 ========================= */
 /* HERO WITH BACKGROUND IMAGE */
 .hero{
-    position: relative;
-  
+    position:relative;
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    /* 🔥 improved background control */
-    background-image: url("images/jamalpur.jpg");
-    background-size: cover;          /* full screen cover */
-    background-position: center top; /* 🔥 subject safe */
-    background-repeat: no-repeat;
-
-    overflow: hidden; /* extra gap fix */
+    background: url("jamalpur.jpg") center/cover no-repeat;
 }
 
 .overlay{
@@ -107,22 +96,20 @@ body{
     position:relative;
     z-index:2;
 }
-
 .hero h1{
     font-size:34px;
     margin-bottom:10px;
 
-    color:#03e0f8;
+    color:#05f701;
     
 }
 
 .hero p{
     color:#ffffff;
-    font-size:20px;
-    margin-bottom:18px;
+    font-size:18px;
+    margin-bottom:20px;
     text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
-
 
 /* =========================
    FOOTER
@@ -177,7 +164,7 @@ footer p{
     }
 }
 /* =========================
-   history page
+   RESET
 ========================= */
 *{
     margin:0;
@@ -193,37 +180,6 @@ body{
     background:#f5f7fb;
 }
 
-/* =========================
-   NAVBAR (same as before)
-========================= */
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:12px 30px;
-    background:linear-gradient(90deg, #6a00ff, #0044ff);
-    color:white;
-}
-
-.navbar h2{
-    font-size:20px;
-}
-
-.navbar ul{
-    display:flex;
-    list-style:none;
-    gap:20px;
-}
-
-.navbar ul li a{
-    color:white;
-    text-decoration:none;
-    font-size:15px;
-}
-
-.navbar ul li a:hover{
-    color:#ffd700;
-}
 
 /* =========================
    MAIN CONTENT
@@ -298,19 +254,6 @@ body{
     height:260px;
     border:none;
     border-radius:10px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer{
-    background:#ffffff;
-    color:#444;
-    text-align:center;
-    padding:10px;
-    font-size:12px;
-    border-top:1px solid #ddd;
-    margin-top:30px;
 }
 
 /* =========================
