@@ -286,3 +286,81 @@ body{
         font-size:13px;
     }
 }
+
+/* =========================
+   UPAZILA PROFESSIONAL CSS
+========================= */
+
+/* =========================
+   TITLE
+========================= */
+.page-title h1{
+    text-align:center;
+    font-size:28px;
+    margin:20px 0;
+}
+
+/* =========================
+   GRID
+========================= */
+.upazila-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap:20px;
+    padding:10px 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card{
+    background:#ffffff;
+    border-radius:14px;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+/* =========================
+   IMAGE
+========================= */
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+}
+
+/* =========================
+   TEXT AREA
+========================= */
+.card-content{
+    text-align:center;
+    padding:12px;
+}
+
+/* উপজেলা নাম */
+.card-content h3{
+    font-size:18px;
+    color:#222;
+    margin-bottom:5px;
+    text-decoration:none;
+}
+
+/* 🔥 ONLY এইটা underline থাকবে */
+.view-btn{
+    font-size:14px;
+    color:#6a00ff;
+    text-decoration:underline;
+}
+
+.view-btn:hover{
+    color:#0044ff;
+}
